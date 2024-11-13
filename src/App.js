@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+// The Main page, where user can select between
+function Main() {
   return (
     <div className="App">
       <header className="App-header">
