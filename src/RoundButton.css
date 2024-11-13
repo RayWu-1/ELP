@@ -1,0 +1,16 @@
+.round-button {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    border: 0;
+    transform: translate(-50%, -50%);
+}
+
+.demand-level-dirty {
+    background-color: red;
+}
+
+.demand-level-normal {
+    background-color: lightgrey;
+}

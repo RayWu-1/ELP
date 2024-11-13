@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { SchoolMap } from './SchoolMap';
 
 // The Main page, where user can select between
 function Main() {
@@ -19,8 +20,26 @@ function Main() {
           Learn React
         </a>
       </header>
+      <SchoolMap backgroundMap="logo512.png" rooms={[
+        {
+          position: {
+            x: 0.4,
+            y: 0.4,
+          },
+          demandLevel: "dirty",
+          onClick: () => console.log("clicked 1"),
+        },
+        {
+          position: {
+            x: 0.6,
+            y: 0.6,
+          },
+          demandLevel: "normal",
+          onClick: () => console.log("clicked 2"),
+        }
+      ]} />
     </div>
   );
 }
 
-export default App;
+export default Main;
