@@ -1,7 +1,7 @@
-import "./PredictionPage.css"
-export const PredictionPage=()=>{
-    return(
+import "./PredictionPage.css";
+export const PredictionPage = () => {
+    return (
         <>
         </>
-    )
-}
+    );
+};

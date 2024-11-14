@@ -1,9 +1,9 @@
-import {Route} from "react-router-dom";
+import { Route } from "react-router-dom";
 
 const createRoutes = (routes) => {
-    return routes.map(({ index, path, component}) => {
+    return routes.map(({ index, path, component }) => {
         return <Route key={index} path={path} element={component} />;
     });
 };
 
-export default createRoutes
+export default createRoutes;
