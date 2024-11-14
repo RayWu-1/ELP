@@ -1,27 +1,37 @@
-import "./CurrentSituationPage.scss"
-import {useEffect, useState} from "react";
-import axios from "axios";
-export const CurrentSituationPage=()=>{
-    const BASE_URL="http://localhost:8085/demand"
-    const [timer,setTimer] = useState(0);
-    const [data, setData]=useState(null)
-    useEffect(() => {
-        axios.get(BASE_URL+"/all").then(res=>{
-            setData(res.data)
-            console.log(res.data)
-        })
-        const intervalId = setInterval(() => {
+import "./CurrentSituationPage.css";
+import { CurrentSituationLegends } from "../components/CurrentSituationLegends";
+import { Map } from '../components/Map';
+import { PathButton, PolygonButton } from "../components/SVGButton";
+import { BATHROOM_DATA } from "./BathroomData";
+import { demandLevelColor } from "../demendLevelColor";
 
-                axios.get(BASE_URL+"/all").then(res=> {
-                    setData(res.data)
-                })
+export const CurrentSituationPage = () => {
+    return (
+        <div className="current-situation-page">
+            <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
+                (data, index) => makeButton(data, "dirty", () => console.log("clicked", index))
+            )} />
+            <CurrentSituationLegends></CurrentSituationLegends>
+        </div>
+    );
+};
 
-        }, 1000*20);
-
-// 清除定时器
-        return () => clearInterval(intervalId);
-    }, []); // 空依赖数组表示只在组件挂载和卸载时执行一次
-    return(<>
-        {data?data.map((dat)=>(<div>{dat.id}</div>)):<></>}
-    </>)
+function makeButton(data, demandLevel, onClick) {
+    const color = demandLevelColor(demandLevel);
+    const { type, ...content } = data.content;
+    let button;
+    switch (type) {
+        case "polygon":
+            button = <PolygonButton color={color} onClick={onClick} {...content} />;
+            break;
+        case "path":
+            button = <PathButton color={color} onClick={onClick} {...content} />;
+            break;
+        default:
+            throw new Error("Unsupported bathroom button type: " + type);
+    }
+    return {
+        position: data.position,
+        content: button,
+    };
 }

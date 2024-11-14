@@ -1,4 +1,4 @@
-import "./PredictionPage.scss"
+import "./PredictionPage.css"
 export const PredictionPage=()=>{
     return(
         <>

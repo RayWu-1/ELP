@@ -16,11 +16,11 @@ function App() {
   ];
 
   return (
-      <Router>
-        <Routes>
-          {createRoutes(routesConfig)}
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        {createRoutes(routesConfig)}
+      </Routes>
+    </Router>
   );
 }
 
