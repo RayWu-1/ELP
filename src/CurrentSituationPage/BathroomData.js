@@ -59,15 +59,113 @@ export const BATHROOM_DATA = [
     {
         id: "MM1",
         position: {
-            x: 0.436,
-            y: 0.33
+            x: 0.759,
+            y: 0.10
         },
         content: {
             type: "polygon",
-            width: "5.7vw",
+            width: "3.3vw",
             // height: "5.3vh",
-            viewBox: "0 0 1 1.5",
+            viewBox: "0 0 1 0.9",
             points: "0,0 0,1.5 1,1.5 1,0"
         }
-    }
+    },
+    {
+        id: "MF1",
+        position: {
+            x: 0.711,
+            y: 0.10
+        },
+        content: {
+            type: "polygon",
+            width: "3.3vw",
+            // height: "5.3vh",
+            viewBox: "0 0 1 1.15",
+            points: "0,0 0,1.5 1,1.5 1,0"
+        }
+    },
+    {
+        id: "AM1",
+        position: {
+            x: 0.159,
+            y: 0.12
+        },
+        content: {
+            type: "polygon",
+            width: "5vw",
+            // height: "5.3vh",
+            viewBox: "0 0 1.16 1.10",
+            points: "0,0 0,1.5 1,1.5 1,0"
+        }
+    },
+    {
+        id: "AF1",
+        position: {
+            x: 0.225,
+            y: 0.12
+        },
+        content: {
+            type: "polygon",
+            width: "5vw",
+            // height: "5.3vh",
+            viewBox: "0 0 1.16 1.10",
+            points: "0,0 0,1.5 1,1.5 1,0"
+        }
+    },
+    {
+        id: "BF1",
+        position: {
+            x: 0.26,
+            y: 0.78
+        },
+        content: {
+            type: "polygon",
+            width: "5.2vw",
+            // height: "5.3vh",
+            viewBox: "0 0 1.10 1.06",
+            points: "0,0 0,1.5 1,1.5 1,0"
+        }
+    },
+    {
+        id: "DM1",
+        position: {
+            x: 0.66,
+            y: 0.78
+        },
+        content: {
+            type: "polygon",
+            width: "5.2vw",
+            // height: "5.3vh",
+            viewBox: "0 0 1.10 1.35",
+            points: "0,0 0,1.5 1,1.5 1,0"
+        }
+    },
+    {
+        id: "DF2",
+        position: {
+            x: 0.855,
+            y: 0.618
+        },
+        content: {
+            type: "polygon",
+            width: "3.7vw",
+            // height: "5.3vh",
+            viewBox: "0 0 1.10 1.8",
+            points: "0,0 0,1.5 1,1.5 1,0"
+        }
+    },
+    {
+        id: "DM3",
+        position: {
+            x: 0.855,
+            y: 0.58
+        },
+        content: {
+            type: "polygon",
+            width: "3.7vw",
+            // height: "5.3vh",
+            viewBox: "0 0 1.10 1.8",
+            points: "0,0 0,1.5 1,1.5 1,0"
+        }
+    },
 ];

@@ -1,8 +1,8 @@
 import "./CurrentSituationPage.css";
 import { CurrentSituationLegends } from "../components/CurrentSituationLegends";
 import { Map } from '../components/Map';
-import { PathButton, PolygonButton } from "../components/SVGButton";
-import { BATHROOM_DATA } from "./bathroomData";
+import {PathButton, PolygonButton, ThirdButton,} from "../components/SVGButton";
+import { BATHROOM_DATA } from "./BathroomData";
 import { demandLevelColor } from "../demendLevelColor";
 
 export const CurrentSituationPage = () => {
