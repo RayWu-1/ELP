@@ -24,3 +24,5 @@ export function demandFrequencyLevel(freq) {
 export function genderIconOfId(id) {
     return id[2] === "M" ? "male.svg" : "female.svg";
 }
+
+export const BASE_URL = "http://172.10.16.57:8085/demand";

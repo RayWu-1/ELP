@@ -4,8 +4,7 @@ import './CurrentSituationLegends.css';
 // import './data.json';
 import { useState } from 'react';
 import axios from 'axios';
-
-const BASE_URL = "http://172.10.16.57:8085/demand";
+import { BASE_URL } from '../config';
 
 export function CurrentSituationLegends(props) {
     const [data, setData] = useState(null);

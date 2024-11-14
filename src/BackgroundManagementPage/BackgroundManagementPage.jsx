@@ -1,9 +1,9 @@
 import Chart from "./chart";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../config";
 
 export const BackgroundManagementPage = () => {
-    const BASE_URL = "http://172.10.16.57:8085/demand";
     const [sortedFrequencies, setSortedFrequencies] = useState([]);
     const sortedFrequenciesRef = useRef([]);
     const [options, setOptions] = useState({});

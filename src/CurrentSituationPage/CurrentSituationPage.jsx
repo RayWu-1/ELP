@@ -3,13 +3,13 @@ import { CurrentSituationLegends } from "../components/CurrentSituationLegends";
 import { Map } from '../components/Map';
 import { PathButton, PolygonButton } from "../components/SVGButton";
 import { BATHROOM_DATA } from "./BathroomData";
-import { demandLevelColor, genderIconOfId } from "../utils";
+import { demandLevelColor, genderIconOfId } from "../config";
 
 export const CurrentSituationPage = () => {
     return (
         <div className="current-situation-page">
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
-                (data, index) => makeButton(data, "dirty", () => console.log("clicked", index))
+                data => makeButton(data, "dirty", () => console.log("clicked", data.id))
             )} />
             <CurrentSituationLegends></CurrentSituationLegends>
         </div>
