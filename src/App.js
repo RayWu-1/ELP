@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { SchoolMap } from './SchoolMap';
+import { Map } from './Map';
+import { RoundButton } from './RoundButton';
 
 // The Main page, where user can select between
 function Main() {
@@ -20,23 +21,21 @@ function Main() {
           Learn React
         </a>
       </header>
-      <SchoolMap backgroundMap="logo512.png" rooms={[
+      <Map backgroundMap="logo512.png" buttons={[
         {
           position: {
             x: 0.4,
             y: 0.4,
           },
-          demandLevel: "dirty",
-          onClick: () => console.log("clicked 1"),
+          content: <RoundButton demandLevel="dirty" onClick={() => console.log("clicked 1")} />,
         },
         {
           position: {
             x: 0.6,
             y: 0.6,
           },
-          demandLevel: "normal",
-          onClick: () => console.log("clicked 2"),
-        }
+          content: <RoundButton demandLevel="normal" onClick={() => console.log("clicked 2")} />,
+        },
       ]} />
     </div>
   );
