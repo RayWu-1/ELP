@@ -1,4 +1,5 @@
 import './App.css';
+import {CurrentSituationLegends} from "./components/CurrentSituationLegends";
 import {
   BrowserRouter as Router,
   Routes
