@@ -11,7 +11,7 @@ import {GameFinishedPage} from "./pages/GameOverPage/GameFinishedPage";
 
 function App() {
   const routesConfig = [
-    { path: '/', component: <StartingPage/>,index:0 },
+    {path: '/', component: <StartingPage/>,index:0 },
     {path: '/main',component: <MainGamePage/>,index:1},
     {path:'/transition',component: <TransitionPage/>,index:2},
     {path: '/gameover',component: <GameFailedPage/>,index:3},
