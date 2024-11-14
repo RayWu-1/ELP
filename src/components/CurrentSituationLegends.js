@@ -12,7 +12,7 @@ export function CurrentSituationLegends(props) {
     useEffect(() => {
         axios.get(BASE_URL + '/all').then(res => {
             setData(res.data);
-        });
+        }).catch(console.log);
     }, []);
     return (<>
         { }
