@@ -1,44 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-import { Map } from './Map';
-import { RoundButton } from './RoundButton';
+import {
+  BrowserRouter as Router,
+  Routes
+} from 'react-router-dom';
+import createRoutes from "./route/Route";
+import {MainGamePage} from "./pages/MainGamePage/MainGamePage";
+import {TransitionPage} from "./pages/TransitionPage/TransitionPage";
+import {GameFailedPage} from "./pages/GameOverPage/GameFailedPage";
+import {GameFinishedPage} from "./pages/GameOverPage/GameFinishedPage";
 
-// The Main page, where user can select between
-function Main() {
+function App() {
+  const routesConfig = [
+    { path: '/', component: <StartingPage/>,index:0 },
+    {path: '/main',component: <MainGamePage/>,index:1},
+    {path:'/transition',component: <TransitionPage/>,index:2},
+    {path: '/gameover',component: <GameFailedPage/>,index:3},
+    {path: '/gamefinish',component: <GameFinishedPage/>,index:4},
+    // {path:"/governmentCheckCarbonAmount",component: <CarbonAmountPage/>,index: 5}
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Map backgroundMap="logo512.png" buttons={[
-        {
-          position: {
-            x: 0.4,
-            y: 0.4,
-          },
-          content: <RoundButton demandLevel="dirty" onClick={() => console.log("clicked 1")} />,
-        },
-        {
-          position: {
-            x: 0.6,
-            y: 0.6,
-          },
-          content: <RoundButton demandLevel="normal" onClick={() => console.log("clicked 2")} />,
-        },
-      ]} />
-    </div>
+      <Router>
+        <Routes>
+          {createRoutes(routesConfig)}
+        </Routes>
+      </Router>
   );
 }
 
-export default Main;
+export default App;
