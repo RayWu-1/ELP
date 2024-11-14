@@ -1,15 +1,37 @@
+import { useEffect, useState } from 'react';
 import "./CurrentSituationPage.css";
 import { CurrentSituationLegends } from "../components/CurrentSituationLegends";
 import { Map } from '../components/Map';
 import { PathButton, PolygonButton } from "../components/SVGButton";
 import { BATHROOM_DATA } from "./BathroomData";
-import { demandLevelColor, genderIconOfId } from "../config";
+import { demandFrequencyLevel, demandLevelColor, genderIconOfId, getNearestHour } from "../utils";
+import { BASE_URL } from "../config";
+import axios from 'axios';
 
 export const CurrentSituationPage = () => {
+    const [predictionData, setPredictionData] = useState({});
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            // Make your request here, e.g., using fetch
+            axios.get(BASE_URL + "/prediction")
+                .then(prediction => {
+                    const nearestHour = getNearestHour();
+                    const nearestPrediction = Object.fromEntries(
+                        Object.entries(prediction).map(([tid, pred]) => [tid, pred[nearestHour]])
+                    );
+                    setPredictionData(nearestPrediction);
+                })
+                .catch(console.log);
+        }, 20000); // Request every 5 seconds
+
+        return () => clearInterval(intervalId); // Cleanup on unmount
+    }, []);
+
     return (
         <div className="current-situation-page">
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
-                data => makeButton(data, "dirty", () => console.log("clicked", data.id))
+                data => makeButton(data, data.id in predictionData ? demandFrequencyLevel(predictionData[data.id]) : "good", () => console.log("clicked", data.id))
             )} />
             <CurrentSituationLegends></CurrentSituationLegends>
         </div>
