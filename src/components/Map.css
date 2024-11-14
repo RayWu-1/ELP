@@ -1,8 +1,10 @@
 
 .map-container {
     position: relative;
-    width: fit-content;
-    margin: auto;
+}
+
+.map-background {
+    width: 100%;
 }
 
 .map-button-wrapper {
