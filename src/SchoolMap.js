@@ -1,6 +1,7 @@
 import { RoundButton } from "./RoundButton";
 import "./SchoolMap.css";
 
+
 export function SchoolMap(props) {
     const { backgroundMap, rooms } = props;
     return (
