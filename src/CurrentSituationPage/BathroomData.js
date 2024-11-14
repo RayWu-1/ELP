@@ -37,7 +37,7 @@ export const BATHROOM_DATA = [
         content: {
             type: "path",
             width: "4.3vw",
-            // height: "6.3vh",
+            height: "6.3vh",
             viewBox: "0 0 15 18",
             d: "M14.8425 3.8709L9.00006 0.500246L0.500061 14L6.87203 17.6762L14.8425 3.8709Z"
         }
@@ -56,4 +56,18 @@ export const BATHROOM_DATA = [
             d: "M0.622129 14.109L8.59261 0.303706L15.0001 4.00037L6.49998 17.5L0.622129 14.109Z"
         }
     },
+    {
+        id: "MM1",
+        position: {
+            x: 0.436,
+            y: 0.33
+        },
+        content: {
+            type: "polygon",
+            width: "5.7vw",
+            // height: "5.3vh",
+            viewBox: "0 0 1 1.5",
+            points: "0,0 0,1.5 1,1.5 1,0"
+        }
+    }
 ];

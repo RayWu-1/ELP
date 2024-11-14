@@ -15,3 +15,11 @@ export function PathButton(props) {
             onClick={props.onClick} />
     </svg>;
 }
+
+export function ThirdButton(props) {
+    return <svg className="svg-button-wrapper" width={props.width} viewBox={props.viewBox}>
+        <path className="svg-button-shape" d={props.d}
+              fill={props.color}
+              onClick={props.onClick} />
+    </svg>;
+}
