@@ -1,4 +1,5 @@
-import "./CurrentSituationPage.scss";
+import "./CurrentSituationPage.css";
+import { CurrentSituationLegends } from "../components/CurrentSituationLegends";
 import { Map } from '../components/Map';
 import { PathButton, PolygonButton } from "../components/SVGButton";
 import { BATHROOM_DATA } from "./bathroomData";
@@ -10,6 +11,7 @@ export const CurrentSituationPage = () => {
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
                 (data, index) => makeButton(data, "dirty", () => console.log("clicked", index))
             )} />
+            <CurrentSituationLegends></CurrentSituationLegends>
         </div>
     );
 };
