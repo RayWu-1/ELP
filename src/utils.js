@@ -1,5 +1,7 @@
 export function demandLevelColor(level) {
     switch (level) {
+        case "undef":
+            return "gray";
         case "good":
             return "green";
         case "somewhat-dirty":
@@ -12,7 +14,10 @@ export function demandLevelColor(level) {
 }
 
 export function demandFrequencyLevel(freq) {
-    if (freq === 0) {
+    if(freq===undefined){//防止网络波动加载时故障
+        return "undef"
+    }
+    else if (freq === 0) {
         return "good";
     } else if (freq < 3) {
         return "somewhat-dirty";

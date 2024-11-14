@@ -1,24 +1,46 @@
 import "./CurrentSituationPage.css";
-import { CurrentSituationLegends } from "../components/CurrentSituationLegends";
-import { Map } from '../components/Map';
-import { PathButton, PolygonButton } from "../components/SVGButton";
-import { BATHROOM_DATA } from "./BathroomData";
-import { demandLevelColor, genderIconOfId } from "../utils";
+import {CurrentSituationLegends} from "../components/CurrentSituationLegends";
+import {Map} from '../components/Map';
+import {PathButton, PolygonButton, RectButton} from "../components/SVGButton";
+import {BATHROOM_DATA} from "./BathroomData";
+import {demandFrequencyLevel, demandLevelColor, genderIconOfId} from "../utils";
+import {useEffect, useRef, useState} from "react";
+import axios from "axios";
+import {NavBar} from "../components/NavBar";
 
 export const CurrentSituationPage = () => {
+    const BASE_URL = "http://localhost:8085/demand"
+    const [frequencies, setFrequencies] = useState([])
+    const frequenciesRef = useRef([])
+    useEffect(() => {
+        axios.get(BASE_URL + "/frequencies/now").then(res => {
+            setFrequencies(res.data)
+        })
+    }, []);
+    useEffect(() => {
+        frequenciesRef.current = frequencies;
+    }, [frequencies]);
     return (
         <div className="current-situation-page">
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
-                (data, index) => makeButton(data, "dirty", () => console.log("clicked", index))
-            )} />
+                (data, index) => makeButton(data, demandFrequencyLevel(
+                    frequenciesRef.current.filter((frequency) => {
+                            console.log(frequency)
+                            return frequency.toiletId === data.id;
+                        }
+                    )[0]?.frequency), () => console.log("clicked", index))
+            )}/>
             <CurrentSituationLegends></CurrentSituationLegends>
+            <NavBar selectedPage={"current"}></NavBar>
         </div>
     );
 };
 
 function makeButton(data, demandLevel, onClick) {
+    console.log(demandLevel)
+    console.log(data)
     const color = demandLevelColor(demandLevel);
-    const { type, ...content } = data.content;
+    const {type, ...content} = data.content;
     let button;
     switch (type) {
         case "polygon":
@@ -27,6 +49,9 @@ function makeButton(data, demandLevel, onClick) {
         case "path":
             button = <PathButton color={color} onClick={onClick} {...content} />;
             break;
+        case "rect":
+            button = <RectButton color={color} onClick={onClick} {...content}/>
+            break;
         default:
             throw new Error("Unsupported bathroom button type: " + type);
     }
@@ -34,7 +59,7 @@ function makeButton(data, demandLevel, onClick) {
         position: data.position,
         content: <>
             {button}
-            <img src={genderIconOfId(data.id)} alt="gender-icon" className="gender-icon" />
+            <img src={genderIconOfId(data.id)} alt="gender-icon" className="gender-icon"/>
         </>,
     };
 }

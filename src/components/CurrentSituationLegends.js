@@ -1,32 +1,36 @@
-import React, { useEffect } from 'react';
-import { Col, Row } from '@douyinfe/semi-ui';
-import './CurrentSituationLegends.css';
-// import './data.json';
-import { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import './CurrentSituationLegends.scss'
+import {useState} from 'react';
+import {RectButton} from "./SVGButton";
+import {makeButton} from "../CurrentSituationPage/CurrentSituationPage";
+import {genderIconOfId} from "../utils";
 
-const BASE_URL = "http://localhost:8085/demand";
 
-export function CurrentSituationLegends(props) {
-    const [data, setData] = useState(null);
-    useEffect(() => {
-        axios.get(BASE_URL + '/all').then(res => {
-            setData(res.data);
-        }).catch(console.log);
-    }, []);
-    return (<>
-        { }
-        <Row gutter={18}>
-            <div className={"row"}>
-                {data ? data.map((dat) => (
-                    <>
-                        <Col span={2}><div className="col1">{dat.toiletId}</div></Col>
-                        <Col span={6}><div className="col2">{"厕所状况良好"}</div></Col>
-                    </>
-                )
-                ) : <></>}
+export function CurrentSituationLegends() {
+    return (
+        <div className={"legends"}>
+            <div className="green">
+                <div className={"icon"}><img src={genderIconOfId("GLM")} className={"icon-svg"} alt=""/>
+                </div>
+                <div className="info">厕所状况良好</div>
             </div>
-        </Row>
+            <div className="yellow">
+                <div className={"icon"}><img src={genderIconOfId("GLM")} className={"icon-svg"} alt=""/>
+                    <img src="compass.svg" className={"compass-icon"}/>
+                </div>
+                <div className="info">厕所需要清理</div>
+            </div>
+            <div className="red">
+                <div className={"icon"}><img src={genderIconOfId("GLM")} className={"icon-svg"} alt=""/>
+                </div>
+                <div className="info">厕所急需清理</div>
+            </div>
+            <div className="gray">
+                <div className={"icon"}><img src={genderIconOfId("GLM")} className={"icon-svg"} alt=""/>
+                </div>
+                <div className="info">加载中/待刷新</div>
+            </div>
 
-    </>);
+        </div>
+    );
 }
