@@ -4,18 +4,13 @@ import {
   Routes
 } from 'react-router-dom';
 import createRoutes from "./route/Route";
-import {MainGamePage} from "./pages/MainGamePage/MainGamePage";
-import {TransitionPage} from "./pages/TransitionPage/TransitionPage";
-import {GameFailedPage} from "./pages/GameOverPage/GameFailedPage";
-import {GameFinishedPage} from "./pages/GameOverPage/GameFinishedPage";
+import {CurrentSituationPage} from "./CurrentSituationPage/CurrentSituationPage";
+import {PredictionPage} from "./PredictionPage/PredictionPage";
 
 function App() {
   const routesConfig = [
-    { path: '/', component: <StartingPage/>,index:0 },
-    {path: '/main',component: <MainGamePage/>,index:1},
-    {path:'/transition',component: <TransitionPage/>,index:2},
-    {path: '/gameover',component: <GameFailedPage/>,index:3},
-    {path: '/gamefinish',component: <GameFinishedPage/>,index:4},
+    { path: '/', component: <CurrentSituationPage/>,index:0 },
+    {path: '/prediction',component: <PredictionPage/>,index:1},
     // {path:"/governmentCheckCarbonAmount",component: <CarbonAmountPage/>,index: 5}
   ];
 
