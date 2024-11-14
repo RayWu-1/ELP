@@ -9,11 +9,15 @@ import { BASE_URL } from "../config";
 import axios from 'axios';
 
 export const CurrentSituationPage = () => {
-    const [predictionData, setPredictionData] = useState({});
+    const [predictionData, setPredictionData] = useState({
+        "C0M": 2, // test data
+        "S0F": 3,
+        "S0M": 0,
+    });
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            // Make your request here, e.g., using fetch
+            // Make request
             axios.get(BASE_URL + "/prediction")
                 .then(prediction => {
                     const nearestHour = getNearestHour();
@@ -23,7 +27,7 @@ export const CurrentSituationPage = () => {
                     setPredictionData(nearestPrediction);
                 })
                 .catch(console.log);
-        }, 20000); // Request every 5 seconds
+        }, 20000); // Request every 20 seconds
 
         return () => clearInterval(intervalId); // Cleanup on unmount
     }, []);
