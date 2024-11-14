@@ -25,7 +25,6 @@ export const CurrentSituationPage = () => {
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
                 (data, index) => makeButton(data, demandFrequencyLevel(
                     frequenciesRef.current.filter((frequency) => {
-                            console.log(frequency)
                             return frequency.toiletId === data.id;
                         }
                     )[0]?.frequency), () => console.log("clicked", index))
@@ -37,8 +36,6 @@ export const CurrentSituationPage = () => {
 };
 
 function makeButton(data, demandLevel, onClick) {
-    console.log(demandLevel)
-    console.log(data)
     const color = demandLevelColor(demandLevel);
     const {type, ...content} = data.content;
     let button;
