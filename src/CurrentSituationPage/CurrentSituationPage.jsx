@@ -4,8 +4,12 @@ import { Map } from '../components/Map';
 import { PathButton, PolygonButton } from "../components/SVGButton";
 import { BATHROOM_DATA } from "./BathroomData";
 import { demandLevelColor } from "../demendLevelColor";
+import {useEffect} from "react";
 
 export const CurrentSituationPage = () => {
+    useEffect(() => {
+
+    }, []);
     return (
         <div className="current-situation-page">
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
