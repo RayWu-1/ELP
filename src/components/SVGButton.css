@@ -1,0 +1,7 @@
+.svg-button-wrapper {
+    pointer-events: none;
+}
+
+.svg-button-shape {
+    pointer-events: auto;
+}
