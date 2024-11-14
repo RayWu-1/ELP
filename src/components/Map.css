@@ -1,11 +1,14 @@
 
 .map-container {
     position: relative;
-    width: fit-content;
-    margin: auto;
+}
+
+.map-background {
+    width: 100%;
 }
 
 .map-button-wrapper {
     position: absolute;
     transform: translate(-50%, -50%);
+    pointer-events: none;
 }
