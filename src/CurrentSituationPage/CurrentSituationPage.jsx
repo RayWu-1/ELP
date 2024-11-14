@@ -3,13 +3,9 @@ import { CurrentSituationLegends } from "../components/CurrentSituationLegends";
 import { Map } from '../components/Map';
 import { PathButton, PolygonButton } from "../components/SVGButton";
 import { BATHROOM_DATA } from "./BathroomData";
-import { demandLevelColor } from "../demendLevelColor";
-import {useEffect} from "react";
+import { demandLevelColor, genderIconOfId } from "../utils";
 
 export const CurrentSituationPage = () => {
-    useEffect(() => {
-
-    }, []);
     return (
         <div className="current-situation-page">
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
@@ -36,6 +32,9 @@ function makeButton(data, demandLevel, onClick) {
     }
     return {
         position: data.position,
-        content: button,
+        content: <>
+            {button}
+            <img src={genderIconOfId(data.id)} alt="gender-icon" className="gender-icon" />
+        </>,
     };
 }
