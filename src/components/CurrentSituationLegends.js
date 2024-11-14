@@ -18,7 +18,7 @@ export function CurrentSituationLegends(props) {
             <div className={"row"}>
                 {data?data.map((dat)=>(
                     <>
-                    <Col span={2}><div className="col1">{dat.toiletId}</div></Col>
+                    <Col span={2} key={dat.id}><div className="col1">{dat.toiletId}</div></Col>
                     <Col span={6}><div className="col2">{"厕所状况良好"}</div></Col>
                     </>
                 )

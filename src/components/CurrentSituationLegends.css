@@ -4,13 +4,23 @@
     padding-top: 2em;
     padding-bottom: 2em;
     padding-left: 2em;
+    border-radius: 30%;
     background-color: lightgray;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 .col2 {
     border: 1px solid lightgray;
     fill: black;
-    padding-top: 2em;
-    padding-left: 2em;
+    border-radius: 10%;
+    padding-top: 1em;
+    padding-left: 1em;
     padding-bottom: 2em;
     background-color: lightgray;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.row {
+    width: 100%;
 }
