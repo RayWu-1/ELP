@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 
-function Chart({ options,name }) {
+function Chart({ options, name }) {
     const chartRef = useRef(null);
     const chartInstance = useRef(null); // 保持对实例的引用
 
@@ -58,7 +58,7 @@ function Chart({ options,name }) {
 
     return (
         <div>
-            <h2 style={{textAlign:"center"}}>{name}</h2>
+            <h2 style={{ textAlign: "center" }}>{name}</h2>
             <div style={{ height: "400px" }} ref={chartRef} />
         </div>
     );
