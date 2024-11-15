@@ -3,19 +3,19 @@ export function demandLevelColor(level) {
         case "undef":
             return "gray";
         case "good":
-            return "green";
+            return "rgb(121, 236, 126)";
         case "somewhat-dirty":
-            return "yellow";
+            return "rgb(239, 228, 115)";
         case "dirty":
-            return "red";
+            return "rgb(225, 122, 100)";
         default:
             return "black";
     }
 }
 
 export function demandFrequencyLevel(freq) {
-    if(freq===undefined){//防止网络波动加载时故障
-        return "undef"
+    if (freq === undefined) {//防止网络波动加载时故障
+        return "undef";
     }
     else if (freq === 0) {
         return "good";

@@ -1,14 +1,19 @@
-.time-period-navbar{
+.time-period-navbar {
   margin-top: 15vw;
   display: flex;
   width: 100vw;
   justify-content: space-around;
-  .left-button-1,.left-button-2, .right-button-1, .right-button-2{
+
+  .left-button-1,
+  .left-button-2,
+  .right-button-1,
+  .right-button-2 {
     width: 7vw;
     height: 7vw;
   }
-  .selected-period{
-    width:28vw;
+
+  .selected-period {
+    width: 28vw;
     height: 7vw;
     font-size: 3.1vw;
     font-family: STZhongsong, serif;
@@ -21,7 +26,8 @@
     justify-content: center;
     align-items: center;
   }
-  *{
+
+  * {
     background-color: #DFE2F9;
     border-radius: 1.5vw;
   }
