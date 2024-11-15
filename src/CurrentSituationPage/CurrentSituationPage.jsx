@@ -22,6 +22,7 @@ export const CurrentSituationPage = () => {
     }, [frequencies]);
     return (
         <div className="current-situation-page">
+            <h1 className={'title'}>厕所当前情况</h1>
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
                 (data, index) => makeButton(data, demandFrequencyLevel(
                     frequenciesRef.current.filter((frequency) => {

@@ -1,5 +1,7 @@
 .current-situation-page {
     width: 100%;
+    background-color: #F4F5FF;
+    height: 120%;
 }
 
 .gender-icon {
@@ -8,4 +10,13 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+.title {
+    margin-left: 100px;
+    font-size: 25px;
+}
+
+body {
+    background-color: #F4F5FF;
 }
