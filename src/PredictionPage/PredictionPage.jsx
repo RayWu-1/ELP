@@ -87,6 +87,7 @@ export const PredictionPage = () => {
 
     return (
         <div className="current-situation-page">
+            <h1 className={'title'}>厕所情况预测</h1>
             <Map
                 backgroundMap="school-map.jpeg"
                 buttons={BATHROOM_DATA.map((data, index) => makeButton(
