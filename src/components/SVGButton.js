@@ -9,12 +9,13 @@ export function RectButton(props) {
                 y={props.y}
                 width={props.width}
                 height={props.height}
-                fill={props.color} 
+                fill={props.color}
                 onClick={props.onClick}
             />
         </svg>
     );
 }
+
 export function PolygonButton(props) {
     return <svg className="svg-button-wrapper" width={props.width} viewBox={props.viewBox}>
         <polygon className="svg-button-shape" points={props.points}

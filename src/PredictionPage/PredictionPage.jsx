@@ -1,13 +1,13 @@
 import "./PredictionPage.css";
-import {CurrentSituationLegends} from "../components/CurrentSituationLegends";
-import {Map} from '../components/Map';
-import {PathButton, PolygonButton, RectButton} from "../components/SVGButton";
-import {BATHROOM_DATA} from "../CurrentSituationPage/BathroomData";
-import {demandFrequencyLevel, demandLevelColor, genderIconOfId} from "../utils";
-import {useEffect, useState} from "react";
+import { CurrentSituationLegends } from "../components/CurrentSituationLegends";
+import { Map } from '../components/Map';
+import { PathButton, PolygonButton, RectButton } from "../components/SVGButton";
+import { BATHROOM_DATA } from "../CurrentSituationPage/BathroomData";
+import { demandFrequencyLevel, demandLevelColor, genderIconOfId } from "../utils";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import {NavBar} from "../components/NavBar";
-import {TimePeriodNavBar} from "../components/TimePeriodNavBar";
+import { NavBar } from "../components/NavBar";
+import { TimePeriodNavBar } from "../components/TimePeriodNavBar";
 
 function getCurrentHour() {
     const now = new Date();

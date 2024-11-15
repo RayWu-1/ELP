@@ -57,10 +57,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"A0M",
+        id: "A0M",
         position: {
-            x:0.165,
-            y:0.117,
+            x: 0.165,
+            y: 0.117,
         },
         content: {
             type: "rect",
@@ -69,10 +69,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"A0F",
+        id: "A0F",
         position: {
-            x:0.226,
-            y:0.117,
+            x: 0.226,
+            y: 0.117,
         },
         content: {
             type: "rect",
@@ -81,10 +81,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"M0M",
+        id: "M0M",
         position: {
-            x:0.713,
-            y:0.102,
+            x: 0.713,
+            y: 0.102,
         },
         content: {
             type: "rect",
@@ -94,10 +94,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"M0F",
+        id: "M0F",
         position: {
-            x:0.755,
-            y:0.102,
+            x: 0.755,
+            y: 0.102,
         },
         content: {
             type: "rect",
@@ -107,10 +107,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"B0F",
+        id: "B0F",
         position: {
-            x:0.259,
-            y:0.778,
+            x: 0.259,
+            y: 0.778,
         },
         content: {
             type: "rect",
@@ -121,10 +121,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"D2M",
+        id: "D2M",
         position: {
-            x:0.853,
-            y:0.579,
+            x: 0.853,
+            y: 0.579,
         },
         content: {
             type: "rect",
@@ -135,10 +135,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"D1F",
+        id: "D1F",
         position: {
-            x:0.853,
-            y:0.619,
+            x: 0.853,
+            y: 0.619,
         },
         content: {
             type: "rect",
@@ -149,10 +149,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"D1M",
+        id: "D1M",
         position: {
-            x:0.663,
-            y:0.779,
+            x: 0.663,
+            y: 0.779,
         },
         content: {
             type: "rect",
@@ -163,10 +163,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"D0M",
+        id: "D0M",
         position: {
-            x:0.653,
-            y:0.887,
+            x: 0.653,
+            y: 0.887,
         },
         content: {
             type: "rect",
@@ -177,10 +177,10 @@ export const BATHROOM_DATA = [
         }
     },
     {
-        id:"D0F",
+        id: "D0F",
         position: {
-            x:0.710,
-            y:0.887,
+            x: 0.710,
+            y: 0.887,
         },
         content: {
             type: "rect",
