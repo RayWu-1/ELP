@@ -17,7 +17,7 @@ function getCurrentHour() {
 export const PredictionPage = () => {
     const [leftDisabled, setLeftDisabled] = useState(false);
     const [rightDisabled, setRightDisabled] = useState(false);
-    const BASE_URL = "http://localhost:8085/demand";
+    const BASE_URL = "http://172.10.16.57:8085/demand";
     const [frequencies, setFrequencies] = useState([]);
     const [currentPeriod, setCurrentPeriod] = useState([getCurrentHour(), getCurrentHour() + 1]);
 

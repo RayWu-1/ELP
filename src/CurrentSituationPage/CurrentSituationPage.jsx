@@ -9,7 +9,7 @@ import axios from "axios";
 import {NavBar} from "../components/NavBar";
 
 export const CurrentSituationPage = () => {
-    const BASE_URL = "http://localhost:8085/demand"
+    const BASE_URL = "http://172.10.16.57:8085/demand"
     const [frequencies, setFrequencies] = useState([])
     const frequenciesRef = useRef([])
     useEffect(() => {
