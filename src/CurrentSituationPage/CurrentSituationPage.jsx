@@ -12,14 +12,26 @@ export const CurrentSituationPage = () => {
     const BASE_URL = "http://172.10.16.57:8085/demand";
     const [frequencies, setFrequencies] = useState([]);
     const frequenciesRef = useRef([]);
+
     useEffect(() => {
         axios.get(BASE_URL + "/frequencies/now").then(res => {
             setFrequencies(res.data);
         });
+        const intervalId = setInterval(() => {
+            // Make request
+            axios.get(BASE_URL + "/frequencies/now")
+                .then(res => {
+                    setFrequencies(res.data);
+                });
+        }, 20000); // Request every 20 seconds
+
+        return () => clearInterval(intervalId); // Cleanup on unmount
     }, []);
+
     useEffect(() => {
         frequenciesRef.current = frequencies;
     }, [frequencies]);
+
     return (
         <div className="current-situation-page">
             <Map backgroundMap="school-map.jpeg" buttons={BATHROOM_DATA.map(
