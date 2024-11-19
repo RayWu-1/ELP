@@ -16,7 +16,6 @@ export function CurrentSituationLegends() {
             </div>
             <div className="yellow">
                 <div className={"icon"}><img src={genderIconOfId("GLM")} className={"icon-svg"} alt=""/>
-                    <img src="compass.svg" className={"compass-icon"}/>
                 </div>
                 <div className="info">厕所需要清理</div>
             </div>
@@ -28,7 +27,7 @@ export function CurrentSituationLegends() {
             <div className="gray">
                 <div className={"icon"}><img src={genderIconOfId("GLM")} className={"icon-svg"} alt=""/>
                 </div>
-                <div className="info">加载中/待刷新</div>
+                <div className="info">加载中</div>
             </div>
 
         </div>

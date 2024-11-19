@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { NavBar } from "../components/NavBar";
 import { TimePeriodNavBar } from "../components/TimePeriodNavBar";
+import {Layout} from "@douyinfe/semi-ui";
 
 function getCurrentHour() {
     const now = new Date();
@@ -86,6 +87,8 @@ export const PredictionPage = () => {
     }, [currentPeriod]);
 
     return (
+        <Layout>
+            <Layout.Content>
         <div className="current-situation-page">
             <h1 className={'title'}>厕所情况预测</h1>
             <Map
@@ -99,7 +102,6 @@ export const PredictionPage = () => {
                 ))}
             />
             <CurrentSituationLegends />
-            <NavBar selectedPage="predict" />
             <TimePeriodNavBar
                 timePeriod={`${currentPeriod[0]}:00 - ${currentPeriod[1]}:00`}
                 right1Func={nextPeriod}
@@ -110,6 +112,11 @@ export const PredictionPage = () => {
                 rightDisabled={rightDisabled}
             />
         </div>
+            </Layout.Content>
+            <Layout.Footer>
+                <NavBar selectedPage="predict" />
+            </Layout.Footer>
+        </Layout>
     );
 };
 

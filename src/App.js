@@ -7,6 +7,7 @@ import createRoutes from "./route/Route";
 import { CurrentSituationPage } from "./CurrentSituationPage/CurrentSituationPage";
 import { PredictionPage } from "./PredictionPage/PredictionPage";
 import { BackgroundManagementPage } from "./BackgroundManagementPage/BackgroundManagementPage";
+import {NavBar} from "./components/NavBar";
 
 function App() {
   const routesConfig = [
